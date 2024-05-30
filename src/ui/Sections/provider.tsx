@@ -2,7 +2,7 @@
 // make a provider  
 "use client"
 
-import { useState, createContext, Dispatch, SetStateAction, ReactNode } from 'react';
+import { useState, createContext, Dispatch, SetStateAction, ReactNode, useContext } from 'react';
 import { SectionName } from '@/lib/types'
 
 export const ActiveSectionContext = createContext<{
@@ -12,19 +12,29 @@ export const ActiveSectionContext = createContext<{
 
 export function ActiveSectionContextProvider({
     children,
-}: {children: ReactNode}) {
+}: { children: ReactNode }) {
 
     const [activeSection, setActiveSection] = useState('home');
 
     return (
         <ActiveSectionContext.Provider
-        value={{
-            activeSection,
-            setActiveSection
-        }}
+            value={{
+                activeSection,
+                setActiveSection
+            }}
         >
             {children}
         </ActiveSectionContext.Provider>
     );
+}
+
+export function useActiveSectionContext() {
+    const context = useContext(ActiveSectionContext);
+
+    if (!context) {
+        throw new Error("Active section context not within active section provider")
+    }
+
+    return context;
 }
 
