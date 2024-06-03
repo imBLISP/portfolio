@@ -8,6 +8,8 @@ import { SectionName } from '@/lib/types'
 export const ActiveSectionContext = createContext<{
     activeSection: SectionName;
     setActiveSection: Dispatch<SetStateAction<SectionName>>;
+    activeSectionChangeTime: Date;
+    setActiveSectionChangeTime: Dispatch<SetStateAction<Date>>;
 } | null>(null);
 
 export function ActiveSectionContextProvider({
@@ -15,12 +17,15 @@ export function ActiveSectionContextProvider({
 }: { children: ReactNode }) {
 
     const [activeSection, setActiveSection] = useState('home');
+    const [activeSectionChangeTime, setActiveSectionChangeTime] = useState(new Date());
 
     return (
         <ActiveSectionContext.Provider
             value={{
                 activeSection,
-                setActiveSection
+                setActiveSection,
+                activeSectionChangeTime, 
+                setActiveSectionChangeTime
             }}
         >
             {children}

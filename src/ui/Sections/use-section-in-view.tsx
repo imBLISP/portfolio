@@ -6,14 +6,15 @@ import { useActiveSectionContext } from "./provider";
 import { useInView } from "react-intersection-observer";
 
 export function useSectionInView(SectionName: SectionName, IntersectionOptions = {threshold: 0.75}) {
-    const {setActiveSection} = useActiveSectionContext()
+    const {setActiveSection, activeSectionChangeTime} = useActiveSectionContext()
     const [ref, inView] = useInView(IntersectionOptions)
 
     useEffect(() => {
-        if (inView) {
+        let dateTime = new Date()
+        if (inView && dateTime.getTime() - activeSectionChangeTime.getTime() >= 1000) {
             setActiveSection(SectionName)
         }
-    }, [inView, SectionName]);
+    }, [inView, SectionName, setActiveSection, activeSectionChangeTime]);
 
     return {ref}
 }
