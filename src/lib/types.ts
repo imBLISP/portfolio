@@ -4,3 +4,4 @@ export type Section = {
 }
 
 export type SectionName = Section['name'] 
+export type SectionId = Section['id']
