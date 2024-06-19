@@ -22,23 +22,19 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={roboto.className}>
         <Providers>
-          <div className="min-h-screen w-full">
-            <div className="sticky z-10 top-0 h-16 border-b border-gray-200 bg-white/50 backdrop-blur-lg flex justify-center">
-              <div className="basis-4/5 md:basis-3/5 max-w-screen-lg flex justify-between">
+            <div className="px-10 w-full sticky z-10 top-0 h-16 border-b border-gray-200 bg-white/50 backdrop-blur-lg flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center">
                     <NavTabs />
                 </div>
                 <div className="flex flex-row items-center">
-                  <Button variant="ghost" className="text-base">Dark</Button>
+                  <Button variant="link" className="text-base">Dark</Button>
                 </div>
-              </div>
             </div>
-            <div className="flex justify-center">
-              <div className="basis-4/5 grow-0 overflow-hidden md:basis-3/5 max-w-screen-lg w-full">
+            <div className="">
+              <div className="">
                 {children}
               </div>
             </div>
-          </div>
         </Providers>
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import { SectionId, SectionName } from "@/lib/types";
 import { useActiveSectionContext } from "../Sections/provider";
-import { NavItems } from "@/lib/data";
+import { NavItems } from "@/lib/data/data";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -32,7 +32,8 @@ export default function NavTabs() {
   const handleClick = (
     name: SectionName,
     date: Date,
-    id: SectionId | null = null
+    id: SectionId | null = null,
+    timeout: number
   ) => {
     setActiveSection(name);
     setActiveSectionChangeTime(date);
@@ -43,10 +44,10 @@ export default function NavTabs() {
         () =>
           section?.scrollIntoView({
             behavior: "smooth",
-            block: "end",
+            block: "center",
             inline: "nearest",
           }),
-        600
+        timeout
       );
     }
   };
@@ -63,9 +64,9 @@ export default function NavTabs() {
     return (
       <div>
         {NavItems.map(({ name, id }) => (
-          <Link
-            href={"/" + id}
-            onClick={() => handleClick(name, new Date())}
+          <Button
+            variant="link"
+            onClick={() => handleClick(name, new Date(), id, 0)}
             className={cn(
               " text-foreground/70 group inline-flex h-10 w-max items-center justify-center pr-8 py-2 text-base font-medium transition-colors hover:text-foreground/100",
               { "text-foreground/100": name == activeSection }
@@ -73,7 +74,7 @@ export default function NavTabs() {
             key={name}
           >
             {name}
-          </Link>
+          </Button>
         ))}
       </div>
     );
@@ -90,7 +91,7 @@ export default function NavTabs() {
             {NavItems.map(({ name, id }) => (
               <Button
                 key={name}
-                onClick={() => handleClick(name, new Date(), id)}
+                onClick={() => handleClick(name, new Date(), id, 600)}
                 variant="ghost"
               >
                 {name}

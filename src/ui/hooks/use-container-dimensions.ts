@@ -13,7 +13,7 @@ export function useContainerDimensions(myRef) {
       setDimensions(getDimensions())
     }
 
-    if (myRef.current) {
+    if (myRef.current != undefined) {
       setDimensions(getDimensions())
     }
 
