@@ -49,7 +49,6 @@ const World = () => {
   const { width } = useContainerDimensions(componentRef);
 
   useEffect(() => {
-    console.log(globeReady);
     if (!globeRef.current) {
       return;
     }

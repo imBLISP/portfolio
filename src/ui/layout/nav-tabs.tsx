@@ -5,7 +5,7 @@ import { useActiveSectionContext } from "../Sections/provider";
 import { NavItems } from "@/lib/data/data";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "../hooks/use-media-query";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -20,8 +20,12 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function NavTabs() {
+  const router = useRouter();
+  // const pathName = usePathname();
+  // const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
   const { device, isDesktop } = useMediaQuery();
   useScrollBehavior(open);
@@ -29,26 +33,41 @@ export default function NavTabs() {
   const { activeSection, setActiveSection, setActiveSectionChangeTime } =
     useActiveSectionContext();
 
+  const scrollToId = (id: SectionId, timeout: number) => {
+    const section = document.querySelector(id);
+    setTimeout(
+      () =>
+        section?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        }),
+      timeout
+    );
+  };
+
+  // useEffect(() => {
+  //   console.log("route changed")
+  //   setTimeout(() => {
+
+  //   if (window.location.hash) {
+  //     scrollToId(window.location.hash, 0);
+  //   }
+  //   }, 100)
+  // }, [pathName]);
+
   const handleClick = (
     name: SectionName,
     date: Date,
     id: SectionId | null = null,
-    timeout: number
+    timeout: number = 0
   ) => {
     setActiveSection(name);
     setActiveSectionChangeTime(date);
     if (id) {
+      // router.push('/')
       setOpen(false);
-      const section = document.querySelector(id);
-      setTimeout(
-        () =>
-          section?.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "nearest",
-          }),
-        timeout
-      );
+      scrollToId(id, timeout)
     }
   };
 
@@ -64,17 +83,18 @@ export default function NavTabs() {
     return (
       <div>
         {NavItems.map(({ name, id }) => (
-          <Button
-            variant="link"
-            onClick={() => handleClick(name, new Date(), id, 0)}
+          <Link
+            href={`/${id}`}
+            onClick={() => handleClick(name, new Date())}
             className={cn(
               " text-foreground/70 group inline-flex h-10 w-max items-center justify-center pr-8 py-2 text-base font-medium transition-colors hover:text-foreground/100",
               { "text-foreground/100": name == activeSection }
             )}
+            // scroll={false}
             key={name}
           >
             {name}
-          </Button>
+          </Link>
         ))}
       </div>
     );
@@ -83,15 +103,21 @@ export default function NavTabs() {
   return (
     <div>
       <Drawer open={open} onOpenChange={setOpen}>
-        <DrawerTrigger className={cn(
-              "text-foreground/70 group inline-flex h-10 w-max items-center justify-center pr-8 py-2 text-base font-medium transition-colors hover:text-foreground/100",
-            )}>Drawer</DrawerTrigger>
+        <DrawerTrigger
+          className={cn(
+            "text-foreground/70 group inline-flex h-10 w-max items-center justify-center pr-8 py-2 text-base font-medium transition-colors hover:text-foreground/100"
+          )}
+        >
+          Drawer
+        </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
             {NavItems.map(({ name, id }) => (
               <Button
+                // href={`/${id}`}
                 key={name}
                 onClick={() => handleClick(name, new Date(), id, 600)}
+                // scroll={false}
                 variant="ghost"
               >
                 {name}

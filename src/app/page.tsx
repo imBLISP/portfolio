@@ -1,9 +1,10 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import Home from "@/ui/Sections/home";
 import Blogs from "@/ui/Sections/blogs";
 import Experience from "@/ui/Sections/Experience";
 import Projects from "@/ui/Sections/Projects";
 import Contact from "@/ui/Sections/contact";
+import { useParams } from "next/navigation";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 

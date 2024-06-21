@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 
 export default function Blogs() {
   const { ref } = useSectionInView("Blogs");
@@ -27,8 +28,9 @@ export default function Blogs() {
             className="pb-32"
           >
             <CarouselContent className="">
-              {BlogsData.map(({ date, title, description, tags }, index) => (
+              {BlogsData.map(({ date, title, description, tags, href}, index) => (
                 <CarouselItem key={index} className="basis md:basis-1/3">
+                  <Link href={href}>
                   <div className="border-2 rounded-xl p-5">
                     <div className="h-44"></div>
                     <div className="font-medium text-md py-2">{date}</div>
@@ -44,6 +46,7 @@ export default function Blogs() {
                       ))}
                     </div>
                   </div>
+                  </Link>
                 </CarouselItem>
               ))}
             </CarouselContent>

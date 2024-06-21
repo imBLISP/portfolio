@@ -18,7 +18,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import { sendEmail } from "@/ui/forms/send-email-action";
-// import {experimental_useFormState as useFormStatus} from "react-dom";
+import { toast } from "sonner";
+import { useState } from "react";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email."),
@@ -26,8 +27,7 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
-//   const { pending } = useFormStatus();
-  const pending = false
+  const [pending, setPending] = useState(false);
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -41,17 +41,16 @@ export function ContactForm() {
   async function onSubmit(formData: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(formData);
-    const {data, error} = await sendEmail(formData);
+    setPending(true);
+    const { data, error } = await sendEmail(formData);
+    setPending(false);
 
     if (error) {
-        console.log(error)
-        return;
+      toast(error);
+      return;
     }
 
-    console.log("Email sent successfully")
-    console.log(JSON.stringify(data, undefined, 2))
-    console.log(JSON.stringify(error, undefined, 2))
+    toast("Email sent successfully");
   }
 
   return (
@@ -88,16 +87,14 @@ export function ContactForm() {
           <div></div>
 
           <Button type="submit" disabled={pending}>
-          {pending? (
-            <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Please wait
-            </>
-          ): (
-            <>
-            Submit
-            </>
-          )}
+            {pending ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Please wait
+              </>
+            ) : (
+              <>Submit</>
+            )}
           </Button>
         </div>
       </form>

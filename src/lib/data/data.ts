@@ -26,6 +26,7 @@ export const BlogsData = [
         date: "4-3-2023",
         title: "Pytorch serve",
         description: "How pytorch models can be served",
+        href:"/blogs/testblog",
         tags: [
             "Pytorch",
             "python",
@@ -37,6 +38,7 @@ export const BlogsData = [
         date: "4-3-2023",
         title: "Pytorch serve",
         description: "How pytorch models can be served",
+        href:"/blogs/testblog",
         tags: [
             "Pytorch",
             "python",
@@ -48,6 +50,7 @@ export const BlogsData = [
         date: "4-3-2023",
         title: "Pytorch serve",
         description: "How pytorch models can be served",
+        href:"/blogs/testblog",
         tags: [
             "Pytorch",
             "python",
@@ -59,6 +62,7 @@ export const BlogsData = [
         date: "4-3-2023",
         title: "Pytorch serve",
         description: "How pytorch models can be served",
+        href:"/blogs/testblog",
         tags: [
             "Pytorch",
             "python",

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { Button } from "@/components/ui/button";
 import NavTabs from "@/ui/layout/nav-tabs";
 import Providers from "./providers";
-import { Suspense } from "react";
+import ThemeSwitch from "@/ui/layout/theme-switch";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ['400', '700'] });
 
@@ -18,6 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className={roboto.className}>
@@ -27,7 +27,7 @@ export default function RootLayout({
                     <NavTabs />
                 </div>
                 <div className="flex flex-row items-center">
-                  <Button variant="link" className="text-base">Dark</Button>
+                  <ThemeSwitch/>
                 </div>
             </div>
             <div className="">
