@@ -24,7 +24,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function NavTabs() {
   const router = useRouter();
-  // const pathName = usePathname();
+  const pathName = usePathname();
   // const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
   const { device, isDesktop } = useMediaQuery();
@@ -65,9 +65,15 @@ export default function NavTabs() {
     setActiveSection(name);
     setActiveSectionChangeTime(date);
     if (id) {
-      // router.push('/')
       setOpen(false);
-      scrollToId(id, timeout)
+      if (pathName == '/') {
+        scrollToId(id, timeout)
+      }
+      else {
+        setTimeout(() => router.push(`/${id}`), timeout)
+      }
+      // router.push(`/${id}`)
+      // scrollToId(id, timeout)
     }
   };
 
