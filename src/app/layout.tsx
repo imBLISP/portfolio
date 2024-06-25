@@ -5,7 +5,7 @@ import NavTabs from "@/ui/layout/nav-tabs";
 import Providers from "./providers";
 import ThemeSwitch from "@/ui/layout/theme-switch";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ['400', '700'] });
+const roboto = Roboto({ subsets: ["latin"], weight: ['300', '400', '700', '900'], display: 'swap'});
 
 export const metadata: Metadata = {
   title: "Vineet",
@@ -20,9 +20,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={roboto.className}>
+      <body className={`${roboto.className} antialiased`}>
         <Providers>
-            <div className="px-10 w-full sticky z-10 top-0 h-16 border-b border-gray-200 bg-white/50 backdrop-blur-lg flex flex-row justify-between items-center">
+            <div className="px-10 w-full sticky z-10 top-0 h-16 border-b border-gray-200 dark:border-zinc-800 bg-white/50 dark:bg-black/50 backdrop-blur-lg flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center">
                     <NavTabs />
                 </div>

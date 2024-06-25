@@ -78,7 +78,7 @@ export default function NavTabs() {
             href={`/${id}`}
             onClick={() => handleNavItemClick(name)}
             className={cn(
-              "pr-8 py-2 h-10 w-max font-medium text-black text-foreground/70 text-base transition-colors hover:text-foreground/100 group inline-flex items-center justify-center",
+              "pr-8 py-2 h-10 w-max leading-6 text-sm text-black text-foreground/70 transition-colors hover:text-foreground/100 group inline-flex items-center justify-center",
               { "text-foreground/100": name == activeSection }
             )}
             key={name}
@@ -95,7 +95,7 @@ export default function NavTabs() {
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger
           className={cn(
-            "pr-8 py-2 h-10 w-max font-medium text-black text-foreground/70 text-base transition-colors hover:text-foreground/100 group inline-flex items-center justify-center"
+            "pr-8 py-2 h-10 w-max text-base text-black text-foreground/70 transition-colors hover:text-foreground/100 group inline-flex items-center justify-center"
           )}
         >
           Drawer

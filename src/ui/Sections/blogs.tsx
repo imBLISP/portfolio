@@ -13,29 +13,35 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Link from "next/link";
+import { useMediaQuery } from "../hooks/use-media-query";
+import { cn } from "@/lib/utils";
+import Processor from "../svgs/processor";
 
 export default function Blogs() {
+  const {isDesktop} = useMediaQuery();
   const { ref } = useSectionInView("Blogs");
   return (
-    <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa]">
+    <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#111111] pb-10">
       <MaxWidthWrapper>
         <div ref={ref} id="blogs">
-          <div className="text-4xl font-medium pb-10 pt-10">Blogs</div>
+          <div className="text-4xl font-semibold pb-10 pt-10">Blogs</div>
           <Carousel
             opts={{
               loop: true,
             }}
-            className="pb-32"
+            className={cn("pb-32", {"mx-[2rem]": !isDesktop, "mx-[0.1rem]": isDesktop})}
           >
             <CarouselContent className="">
-              {BlogsData.map(({ date, title, description, tags, href}, index) => (
-                <CarouselItem key={index} className="basis md:basis-1/3">
-                  <Link href={href}>
-                  <div className="border-2 rounded-xl p-5">
-                    <div className="h-44"></div>
-                    <div className="font-medium text-md py-2">{date}</div>
-                    <div className="font-semibold text-2xl py-2">{title}</div>
-                    <div className="font-medium text-md py-2">
+              {BlogsData.map(({ date, title, description, tags, id}, index) => (
+                <CarouselItem key={index} className="basis md:basis-1/2">
+                  <Link href={`/blogs/${id}`}>
+                  <div className="border rounded-xl p-5 hover:bg-white hover:border-zinc-400 transition duration-300 hover:bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:hover:bg-gradient-to-b dark:from-transparent dark:from-40% dark:to-zinc-900 dark:hover:border-zinc-900 dark:hover:bg-black">
+                    <div className="h-44 flex justify-center items-center">
+                        <Processor></Processor>
+                    </div>
+                    <div className="font-medium text-md py-2 text-zinc-500">{date}</div>
+                    <div className="font-semibold text-xl py-2">{title}</div>
+                    <div className="font-medium text-sm py-2 text-zinc-500">
                       {description}
                     </div>
                     <div className="flex flex-wrap gap-3 pt-2">

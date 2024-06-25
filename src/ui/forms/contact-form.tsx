@@ -78,7 +78,6 @@ export function ContactForm() {
               <FormControl>
                 <Textarea {...field}></Textarea>
               </FormControl>
-              <FormDescription>Feel free to ask me anything</FormDescription>
               <FormMessage />
             </FormItem>
           )}

@@ -5,6 +5,9 @@ import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useContainerDimensions } from "../hooks/use-container-dimensions";
 import { GlobeMethods } from "react-globe.gl";
+import { useMediaQuery } from "../hooks/use-media-query";
+import { useTheme } from "../layout/theme-context";
+import { cn } from "@/lib/utils";
 
 const GlobeTmpl = dynamic(() => import("./globe"), {
   ssr: false,
@@ -23,6 +26,15 @@ const arcsData = [
     label: "Kanverse",
     stroke: 1000,
   },
+  {
+    startLat: 18,
+    startLng: 73,
+    endLat: 12.9716,
+    endLng: 77.5946,
+    color: () => "#ffffff",
+    label: "Bangalore",
+    stroke: 1000,
+  },
 ];
 
 const gData = [
@@ -31,13 +43,50 @@ const gData = [
     lng: 73,
     size: 25,
     color: "#ffffff",
+    textColor: "#3f3f46",
+    text: "Me"
   },
+  {
+    lat: 37,
+    lng: -122,
+    size: 25,
+    color: "#ffffff",
+    textColor: "#3f3f46",
+    text: "Kanverse.ai"
+  },
+  {
+    lat: 12.9716,
+    lng: 77.5946,
+    size: 25,
+    color: "#ffffff",
+    textColor: "#3f3f46",
+    text: "Cognologix (Uber)"
+  }
 ];
 
-const markerSvg = `<svg viewBox="-4 0 36 36">
+const deg2rad = (deg: number) => {
+  return deg * (Math.PI / 180);
+};
+
+const getDistanceFromLatLonInKm = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+  const R = 6371; // Radius of the earth in km
+  const dLat = deg2rad(lat2 - lat1); // deg2rad below
+  const dLon = deg2rad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const d = R * c; // Distance in km
+  return d;
+}
+
+const markerSvg = `<div><svg viewBox="-4 0 36 36">
     <path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"></path>
     <circle fill="black" cx="14" cy="14" r="7"></circle>
-  </svg>`;
+  </svg></div>`;
 
 const World = () => {
   const globeRef = useRef<GlobeMethods>();
@@ -47,6 +96,9 @@ const World = () => {
   const [countries, setCountries] = useState({ features: [] });
 
   const { width } = useContainerDimensions(componentRef);
+  const {device, isDesktop} = useMediaQuery();
+
+  const {theme} = useTheme();
 
   useEffect(() => {
     if (!globeRef.current) {
@@ -84,23 +136,42 @@ const World = () => {
         width={width}
         height={width}
         atmosphereColor="#000000"
-        backgroundColor="#ffffff"
+        backgroundColor={cn({"#ffffff": theme == 'light', "#000000": theme=='dark'})}
         hexPolygonsData={countries.features}
         hexPolygonResolution={3}
         hexPolygonMargin={0.3}
         hexPolygonUseDots={true}
         hexPolygonColor={() => "#ffffff"}
         arcsData={arcsData}
-        arcStroke={1.5}
-        arcColor={() => "#36454F"}
-        arcAltitude={0.4}
+        arcStroke={1}
+        arcColor={() => theme == 'light'? "#52525b": "#71717a"}
+        arcAltitude={(d) => {
+          const dist = getDistanceFromLatLonInKm(d.startLat, d.startLng, d.endLat, d.endLng);
+          console.log(dist/100000.0 );
+          return dist/100000.0*2.5;
+        }}
         arcLabel={() => "Kanverse"}
         htmlElementsData={gData}
         htmlElement={(d) => {
           const el = document.createElement("div");
-          el.innerHTML = markerSvg;
-          el.style.color = d.color;
-          el.style.width = `${d.size}px`;
+          const textel = document.createElement("div");
+          textel.textContent = d.text;
+          textel.style.color = d.textColor;
+          if (isDesktop) {
+            textel.style["font-size"] = "16px";
+          }
+          else {
+            textel.style['font-size'] = "10px";
+          }
+          textel.style.background = "white";
+          textel.style.borderRadius = "5px";
+          textel.style.paddingInline = "5px";
+          const svgel = document.createElement("div");
+          svgel.innerHTML = markerSvg;
+          // el.appendChild(svgel);
+          el.appendChild(textel);
+          svgel.style.width = `${d.size}px`;
+          svgel.style.color = d.color;
 
           el.style["pointer-events"] = "auto";
           el.style.cursor = "pointer";
