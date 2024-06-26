@@ -67,7 +67,7 @@ export default function Projects() {
         </div>
         <MaxWidthWrapper>
         <div className="pt-10 pb-10 text-xl font-medium text-zinc-500">
-          To create new products and learn new technologies, I love building projects in my freetime. Here are some things I've worked on recently.
+          To create new products and learn new technologies, I love building projects in my freetime. Here are some things I&apos;ve worked on recently.
         </div>
           <div className="grid md:grid-cols-2 gap-4">
             {ProjectsData.map(({ date, title, description, tags }, index) => (

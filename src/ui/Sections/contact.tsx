@@ -32,8 +32,7 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-               <ContactForm>
-                </ContactForm> 
+               <ContactForm/>
             </CardContent>
           </Card>
         </MaxWidthWrapper>

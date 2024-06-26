@@ -1,28 +1,36 @@
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 
-export function useContainerDimensions(myRef) {
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+export function useContainerDimensions(myRef: RefObject<HTMLDivElement>) {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const getDimensions = () => ({
-      width: myRef.current.offsetWidth,
-      height: myRef.current.offsetHeight
-    })
+    const getDimensions = ({
+      offsetWidth,
+      offsetHeight,
+    }: {
+      offsetWidth: number;
+      offsetHeight: number;
+    }) => ({
+      width: offsetWidth,
+      height: offsetHeight,
+    });
 
     const handleResize = () => {
-      setDimensions(getDimensions())
-    }
+      if (myRef.current) {
+        setDimensions(getDimensions(myRef.current));
+      }
+    };
 
     if (myRef.current != undefined) {
-      setDimensions(getDimensions())
+      setDimensions(getDimensions(myRef.current));
     }
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [myRef])
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [myRef]);
 
   return dimensions;
-};
+}
