@@ -26,7 +26,7 @@ export default function RootLayout({
                 <div className="flex flex-row items-center">
                     <NavTabs />
                 </div>
-                <div className="flex flex-row items-center">
+                <div className="flex flex-row items-center justify-end">
                   <ThemeSwitch/>
                 </div>
             </div>
