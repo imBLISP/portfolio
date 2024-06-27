@@ -16,7 +16,7 @@ export default function Home() {
   const { ref } = useSectionInView("Home");
   return (
     <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#111111] pb-10" id="home">
-      <MaxWidthWrapper className="mt-24 min-h-[400px]">
+      <MaxWidthWrapper className="mt-4 md:mt-24 min-h-[400px]">
         <div
           ref={ref}
           className="flex flex-col justify-left items-left"
