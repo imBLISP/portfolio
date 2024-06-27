@@ -128,7 +128,7 @@ const World = () => {
   return (
     <div
       ref={componentRef}
-      className="mx-auto max-w-screen-lg w-full overflow-hidden flex flex-row justify-center min-h-[500px]"
+      className="mx-auto max-w-screen-lg w-full overflow-hidden flex flex-row justify-center min-h-[300px]"
     >
       {!globeReady && (
         <Skeleton
