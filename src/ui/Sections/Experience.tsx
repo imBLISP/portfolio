@@ -14,7 +14,7 @@ export default function Experience() {
       <MaxWidthWrapper>
         <div ref={ref} className="">
           <ReactGlobe></ReactGlobe>
-          <div className="text-4xl font-semibold pb-10 pt-0 md:pt-10" id="experience">
+          <div className="text-4xl font-semibold pb-10 pt-10" id="experience">
             Experience
           </div>
           <div className="grid md:grid-cols-2 gap-4">
