@@ -92,7 +92,7 @@ export default function NavTabs() {
 
   return (
     <div>
-      <Drawer open={open} onOpenChange={setOpen}>
+      <Drawer open={open} onOpenChange={setOpen} shouldScaleBackground={true}>
         <DrawerTrigger
           className={cn(
             "pr-8 py-2 h-10 w-max text-sm text-black text-foreground/70 transition-colors hover:text-foreground/100 group inline-flex items-center justify-center"
