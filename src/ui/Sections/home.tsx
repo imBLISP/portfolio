@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/ui/components/button";
 import { useSectionInView } from "./use-section-in-view";
-import { Badge } from "@/components/ui/badge";
 import { MaxWidthWrapper } from "../layout/max-width-wrapper";
 import LinkArrow from "../icons/link-arrow";
 import Download from "../icons/download";

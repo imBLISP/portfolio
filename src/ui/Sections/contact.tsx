@@ -8,7 +8,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/ui/components/card";
 import { ContactForm } from "../forms/contact-form";
 
 export default function Contact() {
@@ -22,7 +22,7 @@ export default function Contact() {
           </div>
           <Card>
             <CardHeader>
-              <CardTitle>Let&apos;s get to know each other</CardTitle>
+              <CardTitle>Let&apos;s get in touch</CardTitle>
               <CardDescription className="pt-5">
                 You can contact me directly at {" "}
         <a className="underline" href="mailto:example@gmail.com">

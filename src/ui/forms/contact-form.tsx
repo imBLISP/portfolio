@@ -2,29 +2,24 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { formSchema } from "@/lib/zod/schemas/contact-form";
+import z from "@/lib/zod";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/ui/components/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+} from "@/ui/components/form";
+import { Input } from "@/ui/components/input";
+import { Textarea } from "@/ui/components/textarea";
 import { Loader2 } from "lucide-react";
 import { sendEmail } from "@/ui/forms/send-email-action";
 import { toast } from "sonner";
 import { useState } from "react";
-
-const formSchema = z.object({
-  email: z.string().email("Please enter a valid email."),
-  message: z.string(),
-});
 
 export function ContactForm() {
   const [pending, setPending] = useState(false);

@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/ui/components/badge";
 import { MaxWidthWrapper } from "../layout/max-width-wrapper";
 import { useSectionInView } from "./use-section-in-view";
 import Image from "next/image";
@@ -67,7 +67,7 @@ export default function Projects() {
         </div>
         <MaxWidthWrapper>
         <div className="pt-10 pb-10 text-xl font-medium text-zinc-500">
-          To create new products and learn new technologies, I love building projects in my freetime. Here are some things I&apos;ve worked on recently.
+          I love building projects in my freetime. Here are some things I&apos;ve worked on recently.
         </div>
           <div className="grid md:grid-cols-2 gap-4">
             {ProjectsData.map(({ date, title, description, tags }, index) => (
