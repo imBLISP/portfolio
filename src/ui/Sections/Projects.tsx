@@ -26,6 +26,7 @@ export default function Projects() {
                   height="1000"
                   alt="Image of a candyland project"
                   className="border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                quality={10}
                 ></Image>
               </div>
             </div>
@@ -36,6 +37,7 @@ export default function Projects() {
                 height="1000"
                 alt="Image of a candyland project"
                 className="border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                quality={10}
               ></Image>
               <Image
                 src="/ecommerce_3.png"
@@ -43,6 +45,7 @@ export default function Projects() {
                 height="1000"
                 alt="Image of a candyland project"
                 className="border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                quality={10}
               ></Image>
             </div>
             <div>
@@ -52,6 +55,7 @@ export default function Projects() {
                 height="1000"
                 alt="Image of a candyland project"
                 className="border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                quality={10}
               ></Image>
             </div>
             <div>
@@ -61,6 +65,7 @@ export default function Projects() {
                 height="1000"
                 alt="Image of a candyland project"
                 className="border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                quality={10}
               ></Image>
             </div>
           </div>
