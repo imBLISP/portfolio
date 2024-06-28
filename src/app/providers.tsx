@@ -3,13 +3,13 @@
 import { ActiveSectionContextProvider } from "@/ui/Sections/provider";
 import ThemeContextProvider from "@/ui/layout/theme-context";
 import { ReactNode } from "react";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/ui/components/sonner";
 
 export default function Providers({ children }: { children: ReactNode }) {
   return (
     <ActiveSectionContextProvider>
       <ThemeContextProvider>{children}</ThemeContextProvider>
-      <Toaster/>
+      <Toaster />
     </ActiveSectionContextProvider>
   );
 }

@@ -7,8 +7,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { useMediaQuery } from "../hooks/use-media-query";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/ui/components/button";
+import { Skeleton } from "@/ui/components/skeleton";
 import useScrollBehavior from "../hooks/use-scroll-behavior";
 import { usePathname, useRouter } from "next/navigation";
 import {
@@ -17,7 +17,7 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTrigger,
-} from "@/components/ui/drawer";
+} from "@/ui/components/drawer";
 
 export default function NavTabs() {
   const router = useRouter();

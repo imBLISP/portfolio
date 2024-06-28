@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/ui/components/badge";
 import { MaxWidthWrapper } from "../layout/max-width-wrapper";
 import { useSectionInView } from "./use-section-in-view";
 import { BlogsData } from "../../lib/data/data";
@@ -11,7 +11,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/ui/components/carousel";
 import Link from "next/link";
 import { useMediaQuery } from "../hooks/use-media-query";
 import { cn } from "@/lib/utils";

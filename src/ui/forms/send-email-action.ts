@@ -4,14 +4,10 @@ import React from "react";
 import { Resend } from "resend";
 import { getErrorMessage } from "@/lib/utils";
 import ContactFormEmail from "@/ui/emails/contact-form-email";
-import { z } from "zod";
+import {formSchema} from "@/lib/zod/schemas/contact-form";
+import z from "@/lib/zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const formSchema = z.object({
-  email: z.string().email("Please enter a valid email"),
-  message: z.string(),
-});
 
 export const sendEmail = async (formData: z.infer<typeof formSchema>) => {
   let data;

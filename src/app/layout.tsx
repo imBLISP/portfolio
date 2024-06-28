@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
 import NavTabs from "@/ui/layout/nav-tabs";
 import Providers from "./providers";
 import ThemeSwitch from "@/ui/layout/theme-switch";
+import "@/styles/globals.css"
 
-const roboto = Roboto({ subsets: ["latin"], weight: ['300', '400', '700', '900'], display: 'swap' });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Vineet",
@@ -17,7 +21,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${roboto.className} antialiased`}>

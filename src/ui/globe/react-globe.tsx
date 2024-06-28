@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, forwardRef } from "react";
 import dynamic from "next/dynamic";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/ui/components/skeleton";
 import { useContainerDimensions } from "../hooks/use-container-dimensions";
 import { GlobeMethods, GlobeProps } from "react-globe.gl";
 import { useMediaQuery } from "../hooks/use-media-query";

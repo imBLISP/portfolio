@@ -4,7 +4,7 @@ import { ExperienceData } from "@/lib/data/data";
 import ReactGlobe from "../globe/react-globe";
 import { MaxWidthWrapper } from "../layout/max-width-wrapper";
 import { useSectionInView } from "./use-section-in-view";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/ui/components/badge";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
