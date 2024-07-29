@@ -113,7 +113,7 @@ const World = () => {
     globeRef.current.controls().enableZoom = false;
     globeRef.current.controls().autoRotate = true;
     globeRef.current.controls().autoRotateSpeed = 0.7;
-    globeRef.current.pointOfView({ lat: 0, lng: 0, altitude: 1.7 });
+    globeRef.current.pointOfView({ lat: 12, lng: 121, altitude: 1.7 });
   }, [globeReady]);
 
   useEffect(() => {
@@ -152,6 +152,7 @@ const World = () => {
         hexPolygonUseDots={true}
         hexPolygonColor={() => "#ffffff"}
         arcsData={arcsData}
+        // latitude and longitude of philippines
         arcStroke={1}
         arcColor={() => (theme == "light" ? "#52525b" : "#71717a")}
         arcAltitude={(d: {

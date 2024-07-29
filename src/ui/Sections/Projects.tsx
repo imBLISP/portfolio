@@ -5,6 +5,7 @@ import { MaxWidthWrapper } from "../layout/max-width-wrapper";
 import { useSectionInView } from "./use-section-in-view";
 import Image from "next/image";
 import { ProjectsData } from "@/lib/data/data";
+import Link from "next/link";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects");
@@ -75,7 +76,8 @@ export default function Projects() {
           I love building projects in my freetime. Here are some things I&apos;ve worked on recently.
         </div>
           <div className="grid md:grid-cols-2 gap-4">
-            {ProjectsData.map(({ date, title, description, tags }, index) => (
+            {ProjectsData.map(({ date, title, description, tags, link }, index) => (
+              <Link href={link||"https://dub.sh/vineet"} key={index} rel="noopener noreferrer" target="_blank">
               <div
                 key={index}
                 className="border rounded-xl p-5 transition duration-300 hover:border-zinc-400 dark:hover:border-zinc-900 dark:hover:bg-black hover:bg-white"
@@ -95,6 +97,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </MaxWidthWrapper>
