@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useTheme } from "../layout/theme-context";
 
-export default function Linkedin({ className }: { className: string }) {
+export function Linkedin({ className }: { className: string }) {
   const {theme} = useTheme();
 
   return (

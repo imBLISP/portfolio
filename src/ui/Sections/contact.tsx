@@ -20,6 +20,9 @@ export default function Contact() {
           <div className="text-4xl font-bold pb-10 pt-10" id="projects">
             Contact
           </div>
+        <div className="pb-10 text-xl font-medium text-zinc-500">
+          Feel free to message me and say hi if you got this far.  
+        </div>
           <Card>
             <CardHeader>
               <CardTitle>Let&apos;s get in touch</CardTitle>

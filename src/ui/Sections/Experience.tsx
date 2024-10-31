@@ -23,7 +23,7 @@ export default function Experience() {
                 key={index}
                 className="border rounded-xl p-5 transition duration-300 hover:border-zinc-400 hover:bg-white dark:hover:bg-black dark:hover:border-zinc-900"
               >
-                <div className="font-medium text-md text-zinc-500 py-2">
+                <div className="font-medium text-sm text-zinc-500 py-2">
                   {date}
                 </div>
                 <div className="font-semibold text-xl py-2">{title}</div>

@@ -80,3 +80,9 @@ html {
 --scroll-behavior: smooth!important;
 scroll-behavior: smooth!important;
 } */
+
+.dark .tweet-embed .react-tweet-theme {
+  --tweet-body-font-size: 1rem;
+  --tweet-bg-color: #000000 !important;
+  --tweet-bg-color-hover: rgb(255, 255, 255, 0.1) !important;
+}

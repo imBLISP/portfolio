@@ -1,4 +1,4 @@
-export default function LinkArrow({ className }: { className: string}) {
+export function LinkArrow({ className }: { className: string}) {
   return (
     <svg
       fill="none"

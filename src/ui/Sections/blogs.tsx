@@ -25,6 +25,9 @@ export default function Blogs() {
       <MaxWidthWrapper>
         <div ref={ref} id="blogs">
           <div className="text-4xl font-semibold pb-10 pt-10">Blogs</div>
+          <div className="pb-10 text-xl font-medium text-zinc-500">
+            I write blogs on my experiences and learnings. Mostly on X but you can find some of them here.
+          </div>
           <Carousel
             opts={{
               loop: true,

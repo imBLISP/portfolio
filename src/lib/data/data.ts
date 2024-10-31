@@ -8,12 +8,12 @@ export const NavItems = [
     id: "#experience",
   },
   {
-    name: "Blogs",
-    id: "#blogs",
-  },
-  {
     name: "Projects",
     id: "#projects",
+  },
+  {
+    name: "Blogs",
+    id: "#blogs",
   },
   {
     name: "Contact",
@@ -267,76 +267,93 @@ export const BlogsData = [
   },
 ];
 
+// "Developed a model deployment framework for inter-VM deployment of TensorFlow and PyTorch models as part of a scalable machine learning pipeline. Integrated GenAI LLMs like LLaMA and enterprise OCR into the platform and model training tool",
 export const ExperienceData = [
   {
-    date: "2023-2024",
-    title: "Software engineer - Kanverse.ai",
-    description: 
-      "Developed a model deployment framework for inter-VM deployment of TensorFlow and PyTorch models as part of a scalable machine learning pipeline. Integrated GenAI LLMs like LLaMA and enterprise OCR into the platform and model training tool",
+    date: "2023 - 2024",
+    title: "Kanverse.ai - Software Engineer",
+    description:
+      "Developed machine learning pipelines for document extraction, integrating LLMs and in-house PyTorch and TensorFlow models.",
     tags: [
+      "Python",
+      "FastAPI",
       "Nodejs",
       "Tensorflow",
-      "Vuejs",
       "Pytorch",
       "Javascript",
-      "Python",
       "Docker",
-      "FastAPI",
       "Redis",
       "MongoDB",
     ],
   },
   {
-    date: "2022-2022",
-    title: "Software engineer intern - Cognologix (Uber)",
+    date: "2022 - 2022",
+    title: "Cognologix (Uber) - Software Engineer Intern",
     description:
-      "Built ETL pipeline validation for Uber/Uber Eats with a throughput of ≈100,000 events per second, meeting sub-second SLAs. Built an ETL framework using Apache Flask, Apache pinot and Kafka.",
+      // "Built ETL pipeline validation for Uber/Uber Eats with a throughput of ≈100,000 events per second, meeting sub-second SLAs. Built an ETL framework using Apache Flask, Apache pinot and Kafka.",
+      "Built ETL pipeline validation for Uber/Uber Eats with throughput of ≈100,000 events/sec",
     tags: ["Golang", "Apache Kafka", "Apache Flink", "Apache Pinot"],
   },
   {
-    date: "2023-Present",
+    date: "2023 - Present",
     title: "Freelance web developer",
-    description: "Worked with clients for full stack web development projects.",
+    description: "Collaborated with clients on full-stack web development projects.",
     tags: ["Nextjs", "Vercel", "Postgresql"],
   },
 ];
 
-export const ProjectsData = [
-{
-    data: "2024-Present",
+export const ProjectsDataDetailed = [
+  {
+    date: "2024 - Present",
     title: "Visual note taking app",
     description: "Visual note taking app built with Nextjs and Postgresql, opensourced repo deployed on vercel",
     tags: ["Nextjs", "TurboRepo", "PostgreSQL", "Vercel", "Zod", "Shadcnui", "Supabase"],
-    link: "https://github.com/imBLISP/visual-notes"
-},
-  {
-    date: "2024-2024",
-    title: "Portfolio website",
-    description: "Portfolio website built with Nextjs and deployed on Vercel",
-    tags: ["Nextjs", "Vercel", "Zod", "Threejs", "Shadcn"],
-    link: "https://dub.sh/vineet"
+    link: "https://github.com/imBLISP/visual-notes",
+    preview_type: "twitter",
+    preview_link: "1842224376260768102",
   },
   {
-    date: "2022-2023",
-    title: "Ecommerce website for digital art",
-    description:
-      "Full-stack eCommerce website deployed on AWS where users can buy/sell digital art",
-    tags: ["Python", "Flask", "SQLite", "Jquery", "Stripe", "AWS"],
-    link: "http://flask-env.eba-ippramjd.ap-south-1.elasticbeanstalk.com/"
-  },
-  {
-    date: "2022-2023",
+    date: "2022 - 2023",
     title: "Recommendation system",
     description:
       "Recommendation system for movies, Collaborative filtering using matrix factorization, Comparison of objective functions and optimizers, Retrieval of user recommendations and similar movies",
     tags: ["Tensorflow", "Pandas", "Numpy"],
-    link: "https://github.com/imBLISP/RecSys"
+    link: "https://github.com/imBLISP/RecSys",
+    preview_type: "image",
+    preview_link: "/recommendation_system.png"
   },
   {
-    date: "2021-2021",
-    title: "Candy shop frontend design",
-    description: "Fronted design for a candy shop website",
+    date: "2022 - 2023",
+    title: "Ecommerce website for digital art",
+    description:
+      "Full-stack eCommerce website deployed on AWS where users can buy/sell digital art",
+    tags: ["Python", "Flask", "SQLite", "Jquery", "Stripe", "AWS"],
+    link: "https://github.com/imBLISP/Digital-art-ecommerce",
+    preview_type: "image",
+    preview_link: "/ecommerce_2.png"
+  },
+];
+
+export const ProjectsData = [
+  {
+    date: "2024 - 2024",
+    title: "Async blogs API",
+    description: "Blogs API to integrate with any blog platform",
+    tags: ["FastAPI", "Celery", "Elasticsearch", "Docker", "Kubernetes"],
+    link: "https://github.com/imBLISP/blogs-api"
+  },
+  {
+    date: "2024 - 2024",
+    title: "Portfolio website",
+    description: "Website you are on right now :)",
+    tags: ["Nextjs", "Vercel", "Zod", "Threejs", "Shadcn"],
+    link: "https://github.com/imBLISP/portfolio"
+  },
+  {
+    date: "2021 - 2021",
+    title: "Candy shop",
+    description: "Landing page for a candy shop website",
     tags: ["Javascript", "CSS"],
     link: "https://github.com/imBLISP/candyland"
   },
-];
+]

@@ -14,9 +14,9 @@ export default function App() {
       <Experience />
       <div className="w-full border-t pb-10"></div>
       <div className="w-full pt-3 pb-10"></div>
-      <Blogs />
-      <div className="w-full border-t pb-10"></div>
       <Projects />
+      <div className="w-full border-t pb-10"></div>
+      <Blogs />
       <div className="w-full border-t pb-10"></div>
       <Contact />
       <div className="w-full border-t pb-10"></div>
