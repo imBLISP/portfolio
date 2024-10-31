@@ -56,7 +56,7 @@ export default function Home() {
               asChild
             >
                 <a href="/vineet_resume.pdf" download="vineet_resume">
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-row gap-2 items-center">
                     Download CV
                   <Download className="w-5 h-5" />
                 </div>

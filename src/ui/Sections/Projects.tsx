@@ -8,7 +8,7 @@ import { ProjectsData, ProjectsDataDetailed } from "@/lib/data/data";
 import Link from "next/link";
 import { Tweet } from "react-tweet";
 import { useTheme } from "../layout/theme-context";
-import {Github, LinkArrow} from "@/ui/icons"
+import { LinkArrow } from "@/ui/icons"
 
 export default function Projects() {
   const { theme } = useTheme();
