@@ -21,7 +21,7 @@ export default function Blogs() {
   const {isDesktop} = useMediaQuery();
   const { ref } = useSectionInView("Blogs");
   return (
-    <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#111111] pb-10">
+    <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#111111]">
       <MaxWidthWrapper>
         <div ref={ref} id="blogs">
           <div className="text-4xl font-semibold pb-10 pt-10">Blogs</div>
@@ -32,7 +32,7 @@ export default function Blogs() {
             opts={{
               loop: true,
             }}
-            className={cn("pb-32", {"mx-[2rem]": !isDesktop, "mx-[0.1rem]": isDesktop})}
+            className={cn("pb-10", {"mx-[2rem]": !isDesktop, "mx-[0.1rem]": isDesktop})}
           >
             <CarouselContent className="">
               {BlogsData.map(({ date, title, description, tags, id}, index) => (

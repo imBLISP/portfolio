@@ -26,7 +26,7 @@ export default function Home() {
         >
           <div className="flex flex-row items-center gap-3">
             {/* <div className="h-4 w-4 rounded-full bg-green-500"></div> */}
-            <div className="py-5 text-sm font-medium text-zinc-500">Last updated : 31 Oct 2024</div>
+            <div className="py-5 text-sm font-medium text-zinc-500">Last updated : 1 Nov 2024</div>
           </div>
           <div className="border-r border-b border-dashed py-5 text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-5% dark:from-50% from-zinc-500 dark:from-white to-black dark:to-zinc-300 to-65% dark:to-65% inline-block">
             Hey, I&apos;m Vineet.
@@ -57,8 +57,8 @@ export default function Home() {
             >
                 <a href="/vineet_resume.pdf" download="vineet_resume">
                 <div className="flex flex-row gap-2 items-center">
-                    Download CV
-                  <Download className="w-5 h-5" />
+                  <div>Download CV</div>
+                  <Download className="w-[19px] h-[19px]" />
                 </div>
                 </a>
             </Button>

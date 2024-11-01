@@ -21,7 +21,8 @@ export default function Projects() {
             Projects
           </div>
         </MaxWidthWrapper>
-        <div className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]" style={{maskImage: "linear-gradient(to top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 60%);"}}>
+        {/* <div className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]" style={{maskImage: "linear-gradient(to top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 60%);"}}> */}
+        <div className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]" style={{}}>
           <div className="flex flex-row shrink justify-center gap-4 px-10 box-border">
             <div>
               <div className="relative">
