@@ -9,12 +9,15 @@ import Link from "next/link";
 import { Tweet } from "react-tweet";
 import { useTheme } from "../layout/theme-context";
 import { LinkArrow } from "@/ui/icons"
-import { useMediaQuery } from "@/ui/hooks/use-media-query";
+import CandyLand from "../../../public/candyland.png"
+import Ecommerce1 from "../../../public/ecommerce_1.png"
+import Ecommerce2 from "../../../public/ecommerce_2.png"
+import Ecommerce3 from "../../../public/ecommerce_3.png"
+import RecommendationSystem from "../../../public/recommendation_system.png"
 
 export default function Projects() {
   const { theme } = useTheme();
   const { ref } = useSectionInView("Projects");
-  const { isDesktop } = useMediaQuery();
 
   return (
     <section className="bg-gradient-to-b pt-10 from-transparent from-40% to-[#fafafa] dark:to-[#111111] pb-10 overflow-hidden">
@@ -25,65 +28,54 @@ export default function Projects() {
           </div>
         </MaxWidthWrapper>
         <div
-          // className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]"
-          className="max-w-[1566px] mx-auto"
+          className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]"
           style={{ maskImage: "linear-gradient(to top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 60%)" }}
         >
           <div className="flex flex-row shrink justify-center gap-4 px-10 box-border">
-            {isDesktop && (
-              <div>
-                <div className="relative">
-                  <Image
-                    src="/candyland.png"
-                    width="1000"
-                    height="1000"
-                    alt="Image of a candyland project"
-                    className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                    quality={10}
-                  ></Image>
-                </div>
+            <div>
+              <div className="relative">
+                <Image
+                  src={CandyLand}
+                  alt="Image of a candyland project"
+                  className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                  quality={50}
+                  style={{ width: "700px" }}
+                ></Image>
               </div>
-            )}
+            </div>
             <div className="flex flex-col gap-4">
               <Image
-                src="/ecommerce_1.png"
-                width="1000"
-                height="1000"
+                src={Ecommerce1}
                 alt="Image of a candyland project"
                 className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                quality={10}
+                quality={50}
+                style={{ width: "800px"}}
               ></Image>
               <Image
-                src="/ecommerce_3.png"
-                width="1000"
-                height="1000"
+                src={Ecommerce3}
                 alt="Image of a candyland project"
                 className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                quality={10}
+                quality={50}
+                style={{ width: "800px" }}
               ></Image>
             </div>
             <div>
               <Image
-                src="/ecommerce_2.png"
-                width="1000"
-                height="1000"
+                src={Ecommerce2}
                 alt="Image of a candyland project"
                 className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                quality={10}
+                quality={50}
+                style={{ width: "800px" }}
               ></Image>
             </div>
-            {isDesktop && (
-              <div>
-                <Image
-                  src="/recommendation_system.png"
-                  width="1000"
-                  height="1000"
-                  alt="Image of a candyland project"
-                  className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                  quality={10}
-                ></Image>
-              </div>
-            )}
+            <div>
+              <Image
+                src={RecommendationSystem}
+                alt="Image of a candyland project"
+                className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                quality={50}
+              ></Image>
+            </div>
           </div>
         </div>
         <MaxWidthWrapper>

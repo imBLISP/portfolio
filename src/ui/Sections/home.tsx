@@ -15,8 +15,6 @@ export default function Home() {
     if (newWindow) newWindow.opener = null
   }
 
-  const buttonGap = 2;
-
   return (
     <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#111111] pb-10" id="home">
       <MaxWidthWrapper className="mt-4 md:mt-24 min-h-[400px]">
