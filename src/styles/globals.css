@@ -85,4 +85,5 @@ scroll-behavior: smooth!important;
   --tweet-body-font-size: 1rem;
   --tweet-bg-color: #000000 !important;
   --tweet-bg-color-hover: rgb(255, 255, 255, 0.1) !important;
+  --tweet-border: 1px solid rgb(255, 255, 255, 0.1) ; 
 }
