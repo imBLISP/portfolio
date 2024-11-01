@@ -25,22 +25,25 @@ export default function Projects() {
           </div>
         </MaxWidthWrapper>
         <div
-          className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]"
-          style={{ maskImage: isDesktop ? "linear-gradient(to top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 60%)" : "none" }}
+          // className="overflow-hidden ml-[50%] translate-x-[-50%] w-[1566px]"
+          className="max-w-[1566px] mx-auto"
+          style={{ maskImage: "linear-gradient(to top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 60%)" }}
         >
           <div className="flex flex-row shrink justify-center gap-4 px-10 box-border">
-            <div>
-              <div className="relative">
-                <Image
-                  src="/candyland.png"
-                  width="1000"
-                  height="1000"
-                  alt="Image of a candyland project"
-                  className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                  quality={10}
-                ></Image>
+            {isDesktop && (
+              <div>
+                <div className="relative">
+                  <Image
+                    src="/candyland.png"
+                    width="1000"
+                    height="1000"
+                    alt="Image of a candyland project"
+                    className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                    quality={10}
+                  ></Image>
+                </div>
               </div>
-            </div>
+            )}
             <div className="flex flex-col gap-4">
               <Image
                 src="/ecommerce_1.png"
@@ -69,16 +72,18 @@ export default function Projects() {
                 quality={10}
               ></Image>
             </div>
-            <div>
-              <Image
-                src="/recommendation_system.png"
-                width="1000"
-                height="1000"
-                alt="Image of a candyland project"
-                className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
-                quality={10}
-              ></Image>
-            </div>
+            {isDesktop && (
+              <div>
+                <Image
+                  src="/recommendation_system.png"
+                  width="1000"
+                  height="1000"
+                  alt="Image of a candyland project"
+                  className="dark:brightness-[90%] border rounded-md overflow-hidden shadow-md hover:brightness-90 transition duration-150 ease-in"
+                  quality={10}
+                ></Image>
+              </div>
+            )}
           </div>
         </div>
         <MaxWidthWrapper>
