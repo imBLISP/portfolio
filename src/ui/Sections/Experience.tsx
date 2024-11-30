@@ -18,9 +18,8 @@ export default function Experience() {
             Experience
           </div>
           <div className="flex w-full justify-center">
-            <div className="md:w-1/2">
-            <ReactGlobe></ReactGlobe>
-
+            <div className="w-full md:w-1/2">
+              <ReactGlobe></ReactGlobe>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4 pt-6">
