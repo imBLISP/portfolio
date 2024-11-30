@@ -27,7 +27,7 @@ export default function RootLayout({
         <div vaul-drawer-wrapper="">
           <div className="relative flex min-h-screen flex-col bg-background">
             <Providers>
-              <div className="px-10 w-full sticky z-10 top-0 h-16 border-b border-gray-200 dark:border-zinc-800 bg-white/50 dark:bg-black/50 backdrop-blur-lg flex flex-row justify-between items-center">
+              <div className="px-10 w-full sticky z-10 top-0 h-16 border-b border-gray-200 dark:border-neutral-800 bg-white/50 dark:bg-black/50 backdrop-blur-lg flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center">
                   <NavTabs />
                 </div>

@@ -128,7 +128,7 @@ const World = () => {
   return (
     <div
       ref={componentRef}
-      className="mx-auto max-w-screen-lg w-full overflow-hidden flex flex-row justify-center min-h-[300px]"
+      className="mx-auto max-w-screen-md w-full overflow-hidden flex flex-row justify-center min-h-[300px]"
     >
       {!globeReady && (
         <Skeleton
@@ -141,7 +141,7 @@ const World = () => {
         onGlobeReady={() => setGlobeReady(true)}
         width={width}
         height={width}
-        atmosphereColor="#000000"
+        // atmosphereColor={theme === "dark" ? "#ffffff" : "#000000"}
         backgroundColor={cn({
           "#ffffff": theme == "light",
           "#000000": theme == "dark",
@@ -151,6 +151,7 @@ const World = () => {
         hexPolygonMargin={0.3}
         hexPolygonUseDots={true}
         hexPolygonColor={() => "#ffffff"}
+        // hexPolygonColor={() => theme === "dark" ? "#000000" : "#ffffff"}
         arcsData={arcsData}
         // latitude and longitude of philippines
         arcStroke={1}

@@ -54,7 +54,7 @@ dependencies:
     specifier: ^0.379.0
     version: 0.379.0(react@18.0.0)
   next:
-    specifier: 14.2.3
+    specifier: link:@splinetool/react-spline/next
     version: 14.2.3(@babel/core@7.24.5)(react-dom@18.0.0)(react@18.0.0)
   next-themes:
     specifier: ^0.3.0

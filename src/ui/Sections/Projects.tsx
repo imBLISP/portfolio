@@ -80,7 +80,7 @@ export default function Projects() {
           </div>
         </div>
         <MaxWidthWrapper>
-          <div className="pt-10 pb-10 text-xl font-medium text-zinc-500">
+          <div className="pt-10 pb-10 text-xl font-medium text-neutral-500">
             I love building projects in my freetime. Here are some things I&apos;ve worked on recently.
           </div>
           <div className="grid md:grid-cols-2 gap-4">
@@ -88,18 +88,18 @@ export default function Projects() {
               <Link href={link || "https://dub.sh/vineet"} key={index} rel="noopener noreferrer" target="_blank">
                 <div
                   key={index}
-                  className="border rounded-xl p-5 transition duration-300 hover:border-zinc-400 dark:hover:border-zinc-900 dark:hover:bg-black hover:bg-white"
+                  className="border rounded-xl p-5 transition duration-300 hover:border-neutral-400 dark:hover:border-neutral-900 dark:hover:bg-black hover:bg-white"
                 >
                   <div className="flex items-center gap-2">
-                    <div className="font-medium text-sm text-zinc-500 py-2">
+                    <div className="font-medium text-sm text-neutral-500 py-2">
                       {date}
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="font-semibold text-xl py-2">{title}</div>
-                    <LinkArrow className="w-4 h-4 text-zinc-500" />
+                    <LinkArrow className="w-4 h-4 text-neutral-500" />
                   </div>
-                  <div className="font-medium text-sm py-2 text-zinc-500">
+                  <div className="font-medium text-sm py-2 text-neutral-500">
                     {description}
                   </div>
                   <div className={`${theme === "dark" ? "dark" : "light"}`}>
@@ -127,18 +127,18 @@ export default function Projects() {
                 <Link href={link || "https://dub.sh/vineet"} key={index} rel="noopener noreferrer" target="_blank">
                   <div
                     key={index}
-                    className="border rounded-xl p-5 transition duration-300 hover:border-zinc-400 dark:hover:border-zinc-900 dark:hover:bg-black hover:bg-white"
+                    className="border rounded-xl p-5 transition duration-300 hover:border-neutral-400 dark:hover:border-neutral-900 dark:hover:bg-black hover:bg-white"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="font-medium text-sm text-zinc-500 py-2">
+                      <div className="font-medium text-sm text-neutral-500 py-2">
                         {date}
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="font-semibold text-xl py-2">{title}</div>
-                      <LinkArrow className="w-4 h-4 text-zinc-500" />
+                      <LinkArrow className="w-4 h-4 text-neutral-500" />
                     </div>
-                    <div className="font-medium text-sm py-2 text-zinc-500">
+                    <div className="font-medium text-sm py-2 text-neutral-500">
                       {description}
                     </div>
                     <div className="flex flex-wrap gap-3 pt-2">

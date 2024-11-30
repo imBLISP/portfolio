@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     "text-2xl pt-10": content.type == "h1",
                     "text-xl pt-6": content.type == "h2",
                     "text-sm": content.type == "paragraph",
-                    "bg-zinc-100 dark:bg-zinc-800 rounded-lg p-6 text-zinc-500 dark:text-zinc-300 text-sm":
+                    "bg-neutral-100 dark:bg-neutral-800 rounded-lg p-6 text-neutral-500 dark:text-neutral-300 text-sm":
                       content.type == "code",
                   })}
                 >
