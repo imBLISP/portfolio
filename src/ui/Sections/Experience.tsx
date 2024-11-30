@@ -17,7 +17,12 @@ export default function Experience() {
           <div className="text-4xl font-semibold pb-6 pt-10" id="experience">
             Experience
           </div>
-          <ReactGlobe></ReactGlobe>
+          <div className="flex w-full justify-center">
+            <div className="md:w-1/2">
+            <ReactGlobe></ReactGlobe>
+
+            </div>
+          </div>
           <div className="grid md:grid-cols-2 gap-4 pt-6">
             {ExperienceData.map(({ date, title, description, tags }, index) => (
               <div
@@ -34,7 +39,6 @@ export default function Experience() {
                 <div className="flex flex-wrap gap-3 pt-2">
                   {tags.map((tag) => (
                     <Badge variant="default" key={tag} className="h-8 rounded-md gap-2">
-                      {/* <FaPython className="h-10"/> */}
                       {tag}
                     </Badge>
                   ))}

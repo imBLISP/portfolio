@@ -32,7 +32,7 @@ export default function Home() {
             {/* <div className="h-4 w-4 rounded-full bg-green-500"></div> */}
             <div className="py-5 text-sm font-medium text-stone-500 pointer-events-auto">Last updated : 30 Nov 2024</div>
           </div>
-          <div className="w-fit py-5 text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-5% dark:from-50% from-neutral-500 dark:from-white to-black dark:to-neutral-300 to-65% dark:to-65% inline-block pointer-events-auto">
+          <div className="w-fit py-5 text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-70% md:from-40% dark:from-50% from-neutral-500 dark:from-white to-black dark:to-neutral-300 to-85% md:to-80% dark:to-65% inline-block pointer-events-auto">
             Hey, I&apos;m Vineet.
           </div>
           <div className="w-fit py-2 text-xl text-neutral-500 font-medium pointer-events-auto">
@@ -48,7 +48,7 @@ export default function Home() {
           <div className="py-10 flex flex-col md:flex-row md:justify-left gap-6">
             <Button
               variant="default"
-              className="text-base font-medium flex flex-row gap-3 pointer-events-auto"
+              className="dark:bg-[#dddddd] text-base font-medium flex flex-row gap-3 pointer-events-auto"
               onClick={() => router.push("/#contact")}
             >
               <div>Contact me here</div>
