@@ -18,7 +18,7 @@ export default function Home() {
   }
 
   return (
-    <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#111111] pb-10 relative z-0" id="home">
+    <section className="bg-gradient-to-b from-transparent from-40% to-[#fafafa] dark:to-[#0a0a0a] pb-10 relative z-0" id="home">
       <Spline
         className="absolute inset-0 w-full h-full -z-10"
         scene="https://prod.spline.design/Z95ys6MCqk8r8QqE/scene.splinecode"
