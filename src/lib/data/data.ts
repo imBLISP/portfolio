@@ -275,6 +275,7 @@ export const ExperienceData = [
     description:
       "Developed machine learning pipelines for document extraction, integrating LLMs and in-house PyTorch and TensorFlow models.",
     tags: [
+      "React",
       "Python",
       "FastAPI",
       "Nodejs",
