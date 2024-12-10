@@ -293,7 +293,7 @@ export const ExperienceData = [
     description:
       // "Built ETL pipeline validation for Uber/Uber Eats with a throughput of ≈100,000 events per second, meeting sub-second SLAs. Built an ETL framework using Apache Flask, Apache pinot and Kafka.",
       "Built ETL pipeline validation for Uber/Uber Eats with throughput of ≈100,000 events/sec",
-    tags: ["Golang", "Apache Kafka", "Apache Flink", "Apache Pinot"],
+    tags: ["Java", "Spring Boot", "Golang", "Apache Kafka", "Apache Flink", "Apache Pinot"],
   },
   {
     date: "2023 - Present",
