@@ -38,6 +38,7 @@ export default function Home() {
           <div className="w-fit py-2 text-xl text-neutral-500 font-medium pointer-events-auto">
             I&apos;m a full stack developer with experience in{" "}
             <strong className="text-xl text-neutral-950 dark:text-neutral-100 font-medium">React</strong>
+            ,<strong className="text-xl text-neutral-950 dark:text-neutral-100 font-medium"> Node</strong>
             ,<strong className="text-xl text-neutral-950 dark:text-neutral-100 font-medium"> Next</strong>
             ,<strong className="text-xl text-neutral-950 dark:text-neutral-100 font-medium"> Python</strong>{" "}
             and{" "}
